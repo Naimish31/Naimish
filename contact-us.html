@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naimish Bhadani</title>
+
+    <!-- slider link -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- custom css link -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/mediaquery.css">
+</head>
+
+<body class="about-us contact">
+
+    <header>
+        <nav class="header">
+            <div>
+               <span><a style="color: rgb(255, 255, 255);cursor: pointer;font-size: 20px;" href="/"><b>Naimish Bhadani</b></a></span>
+            </div>
+            <div id=" navbarNav" class="header_link">
+                <ul class="header_ul">
+                   <li class="nav-item">
+                        <a class="nav_anchor" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav_anchor" href="./about-us.html">About Me</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav_anchor" href="./skill.html">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav_anchor" href="./special-features.html">Special Features</a>
+                    </li>
+                    <li class="nav-item" class="nav-item">
+                        <a class="nav_anchor" href="./contact-us.html">Contact</a>
+                    </li>
+                    <li class="nav-item" class="nav-item">
+                        <a class="nav_anchor" href="./login.html">login</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="bar_icon">
+                <label for="menu-toggle">
+                    <i class="fas fa-bars" for="menu-toggle"></i>
+                </label>
+            </div>
+            <div class="moblie_menubar">
+                <input type="checkbox" id="menu-toggle" />
+                <ul id="menu">
+
+                    <li class="nav-item">
+                        <a class="nav_anchor" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav_anchor" href="./about-us.html">About Me</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav_anchor" href="./skill.html">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav_anchor" href="./special-features.html">Special Features</a>
+                    </li>
+                    <li class="nav-item" class="nav-item">
+                        <a class="nav_anchor" href="./contact-us.html">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <div class="container" style="margin-top: 60px; margin-bottom: 60px;">
+
+            <form id="contactForm" action="" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="footer_detail">
+            <div class="container">
+                <div class="footer_text">
+                    <div class="f1">
+                        <p>Copyright © All Rights Reserved</p>
+                    </div>
+                    <div class="f2">
+                        <p>Designed by Naimish Bhadani.</p>
+                        <p>+44 7767579608</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="https://kit.fontawesome.com/ea4e2d73b7.js" crossorigin="anonymous"> </script>
+    <script>
+          document.getElementById("contactForm").addEventListener("submit", function(event) {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        if (name.trim() === "" || email.trim() === "" || message.trim() === "") {
+            alert("All fields are required");
+            event.preventDefault(); // Prevent form submission
+        } else if (!validateEmail(email)) {
+            alert("Please enter a valid email address");
+            event.preventDefault(); // Prevent form submission
+        } else {
+            const messageContent = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+            alert("Form values:\n" + messageContent);
+        }
+    });
+
+    // Email validation function
+    function validateEmail(email) {
+        const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+        return emailRegex.test(email);
+    }
+    </script>
+</body>
+
+</html>
